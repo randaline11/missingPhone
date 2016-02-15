@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+    <script src ="main.js"> </script>
+    <style>
+      #movie {height: 100%; width: 100%; z-index: -1;}
+    </style>
+</head>
+
+<body>
+  <div class="content">
+    <video id ="movie" src="rose.mp4" autoplay controls> </video>
+    <img id = "google" src="google.png" style="visibility:hidden"> </img>
+  </div>
+
+  <script>
+  var movie = document.getElementById('movie');  // the current video
+  var qr = document.getElementById('google');  // the qr code
+  var ORIG_MOVIE = "rose.mp4";  // the original video
+
+
+  // add event listener to the video so it loops correctly (default doesnt work)
+
+  movie.addEventListener("ended", looper);
+//  alert("movie is" + movie);
+//  alert("current time is" + movie.end);
+
+
+ // when the vieo ends, remove the qr code and begin playing again.
+  function looper() {
+    var css ="visibility:hidden;";
+    qr.style.cssText= css;  // overwrite hidden default of qr code
+
+  //  if (movie.src != ORIG_MOVIE) {
+  //    alert("this is a different movie!");
+  //    alert("movie src is" + movie.src);
+      movie.src=ORIG_MOVIE;
+      var showInterval = setInterval(showCode, 1000);  // reset watcher
+      alert(document.cookie);
+
+      /*
+      if(document.cookie != ""){
+        alert("it worked!")
+      }  */
+
+      // if this is rose
+      //reset the showcode interval
+  //  }
+    movie.play();  // loop
+  }
+  </script>
