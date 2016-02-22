@@ -54,7 +54,7 @@ function cookieReader() {
   if (document.cookie !== "") {
     var cookies = document.cookie.split(";");  // cookie with name
     var cookies2 = document.cookie.split("=");  // split name/value pair
-  //  alert(document.cookie);
+    alert(document.cookie);
     // display a different video by grabbing src from cookie
     document.getElementById("movie").src = cookies2[1]; // value only
     // TEST 5:11 PM
