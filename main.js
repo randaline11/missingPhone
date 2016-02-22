@@ -69,7 +69,7 @@ function cookieReader() {
 
 //delete a cookie if need be
 function cookieDelete() {
-  alert("cookieDelete");
+//  alert("cookieDelete");
   document.cookie = "my_vid=; expires=Fri, 19 Dec 1997 01:02:03 UTC";
   //alert ("document.cookie is" + document.cookie);
 
